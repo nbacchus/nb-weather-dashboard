@@ -10,23 +10,6 @@ var wind = document.querySelector("#wind");
 var humidity = document.querySelector("#humidity");
 var uvindex = document.querySelector("#uvindex");
 
-var formSubmitHandler = function(event) {
-    event.preventDefault();
-  
-    // get value from input element
-    var city = nameInputEl.value.trim();
-  
-    if (username) {
-      getUserRepos(username);
-  
-      // clear old content
-      repoContainerEl.textContent = "";
-      nameInputEl.value = "";
-    } else {
-      alert("Please enter a GitHub username");
-    }
-  };
-
 let btn = document.querySelector('button').addEventListener('click', () => 
 searchAPI())
 
