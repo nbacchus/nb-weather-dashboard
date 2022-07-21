@@ -1,5 +1,34 @@
+body {
+    margin: 0;
+}
+
 header {
     background-color: blue;
     color:white;
     padding: 5px;
+}
+
+aside {
+    width: 25%;
+}
+
+section {
+    width: 75%;
+    margin: 5px;
+    border: solid black 1px;
+}
+
+article {
+    width: 75%;
+    margin: 5px;
+}
+
+.dayone,
+.daytwo,
+.daythree,
+.dayfour,
+.dayfive {
+    display: inline;
+    background-color: blue;
+    color: white;
 }

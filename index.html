@@ -1,46 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>NB Weather Dashboard</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>NB Weather Dashboard</title>
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
 
-  <body>
+    <body>
 
-    <header>
-        <h1 class="col-12 text-center border-start-0">
-            NB Weather Dashboard
-        </h1>
-    </header>
+        <header>
+            <h1 class="text-center border-start-0">
+                NB Weather Dashboard
+            </h1>
+        </header>
 
-    <!--City Column on left-->
-        <div class="citySearch col-4 float-left text-left m-5">
-            <h1>Search for a City:</h1>
-            <form>
-                <input type="text" placeholder="Enter City">
-                <button class="btn-primary btn-block mt-3">Search</button>
-            </form>
-        </div>
-    
-    <div class="savedCities">
+        <aside>
+            <!--City Column on left-->
+            <div class="citySearch float-left text-left m-5">
+                <h2>Search for a City:</h1>
+                <form>
+                    <input id="weatherInput" type="text" placeholder="Enter City">
+                    <br>
+                    <button class="searchbtn btn-primary mt-3">Search</button>
+                </form>
+            </div>
 
-    </div>
+            <div class="savedCities"></div>
+        </aside>
 
-    <!--Current Conditions right top-->
-    <div class="currentConditions col-8 float-right border border-dark mr-5">
+        <section>
+                <!--Current Conditions right top-->
+            <div class="currentConditions float-right border border-dark mr-5">
+                <h2 id="cityname"></h2>
+                <h3 class="currentDay"></h3>
+                <p id="temperature"></p>
+                <p id="wind"></p>
+                <p id="humidity"></p>
+                <p id="uvindex"></p>
+            </div>
+        </section>
+
+        <article>
+            <!--Future Conditions right bottom-->
+            <div class="futureConditions float-right">
+                <h2>
+                    5-Day Forecast
+                </h2>
+                <div class="dayone">
+                    <p class="date font-weight-bold"></p>
+                    <p id="temperature"></p>
+                    <p id="wind"></p>
+                    <p id="humidity"></p>
+                </div>
+                <div class="daytwo">
+                    <p class="date font-weight-bold"></p>
+                    <p id="temperature"></p>
+                    <p id="wind"></p>
+                    <p id="humidity"></p>
+                </div>
+                <div class="daythree">
+                    <p class="date font-weight-bold"></p>
+                    <p id="temperature"></p>
+                    <p id="wind"></p>
+                    <p id="humidity"></p>
+                </div>
+                <div class="dayfour">
+                    <p class="date font-weight-bold"></p>
+                    <p id="temperature"></p>
+                    <p id="wind"></p>
+                    <p id="humidity"></p>
+                </div>
+                <div class="dayfive">
+                    <p class="date font-weight-bold"></p>
+                    <p id="temperature"></p>
+                    <p id="wind"></p>
+                    <p id="humidity"></p>
+                </div>
+            </div>
+        </article>
         
-    </div>
 
-    <!--Future Conditions right bottom-->
-    <div class="futureConditions col-8 float-right"></div>
-    
+        <!--JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="./assets/js/javascript.js"></script>
 
-    <!--JS-->
-    <script src="./assets/js/javascript.js"></script>
-  </body>
+
+    </body>
 
 </html>
