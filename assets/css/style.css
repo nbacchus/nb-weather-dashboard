@@ -23,6 +23,10 @@ article {
     margin: 5px;
 }
 
+input {
+    width: 100%;
+}
+
 .dayone,
 .daytwo,
 .daythree,

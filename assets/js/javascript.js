@@ -1,6 +1,6 @@
 var citySearch = document.querySelector(".citysearch");
 var searchbtn = document.querySelector(".searchbtn");
-var weatherInput = document.querySelector("#weatherinput")
+var cityInput = document.querySelector("#cityinput")
 var date = document.querySelector(".date");
 var currentConditions = document.querySelector(".currentconditions");
 var cityname = document.querySelector("#cityname");
@@ -10,15 +10,31 @@ var wind = document.querySelector("#wind");
 var humidity = document.querySelector("#humidity");
 var uvindex = document.querySelector("#uvindex");
 
+var formSubmitHandler = function(event) {
+    event.preventDefault();
+  
+    // get value from input element
+    var city = nameInputEl.value.trim();
+  
+    if (username) {
+      getUserRepos(username);
+  
+      // clear old content
+      repoContainerEl.textContent = "";
+      nameInputEl.value = "";
+    } else {
+      alert("Please enter a GitHub username");
+    }
+  };
+
 let btn = document.querySelector('button').addEventListener('click', () => 
-searchAPI(),
-console.log("#weatherinput"));
+searchAPI())
 
 //API Call
 function searchAPI() {
-    var weatherInput = document.querySelector("#weatherInput");
-    console.log(weatherInput);
-    var inputValue = weatherInput.value;
+    var cityInput = document.querySelector("#cityinput");
+    console.log(cityInput);
+    var inputValue = cityinput.value;
     var apiKey = "c107fd0ee983a34881f3573465d57ca5";
     var queryURL =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -36,9 +52,9 @@ function searchAPI() {
   });
 }
 
-function searchCoordinate(lon , lat) {
+function searchCoordinate(lon, lat) {
     var apiKey = "c107fd0ee983a34881f3573465d57ca5";
-    var weatherInput = document.querySelector("#weatherInput");
+    var cityInput = document.querySelector("#cityinput");
   fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey + "&units=imperial")
     .then(function (response) {
       return response.json();
@@ -53,8 +69,7 @@ function searchCoordinate(lon , lat) {
       
   
       for (var i = 1; i < 6; i++) {
-        document.querySelector("#temp" + i).textContent = data.daily[i].temp.day;
-        // Forecast with Moment JS
+        document.querySelector("#temperature" + i).textContent = data.daily[i].temp.day;
         var forecast = moment().add(1, "days").calendar();
         console.log("forecast");
         forecastdaily.innerHTML = forecastdaily
@@ -64,8 +79,8 @@ function searchCoordinate(lon , lat) {
   }
 
 //Moment JS
-// var currentDay =moment().subtract(10, 'days').calendar();
-// console.log("currentDay");
-// date.innerHTML = currentDay;
-// searchAPI();
+var currentDay =moment().subtract(10, 'days').calendar();
+console.log("currentDay");
+date.innerHTML = currentDay;
+searchAPI();
 
