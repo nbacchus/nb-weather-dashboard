@@ -17,23 +17,23 @@
             </h1>
         </header>
 
-        <aside>
+        <section>
             <!--City Column on left-->
-            <div class="citySearch float-left text-left m-5">
+            <div class="citySearch">
                 <h2>Search for a City:</h1>
                 <form>
                     <input id="cityInput" type="text" placeholder="Enter City">
                     <br>
-                    <button class="searchbtn btn-block btn-primary mt-3">Search</button>
+                    <button class="searchbtn">Search</button>
                 </form>
             </div>
 
             <div class="savedCities"></div>
-        </aside>
+        </section>
 
         <section>
-                <!--Current Conditions right top-->
-            <div class="currentConditions float-right border border-dark mr-5">
+                <!--Current Conditions top-->
+            <div class="currentConditions">
                 <h2 id="cityInput"></h2>
                 <h3 class="currentDay"></h3>
                 <p id="temperature"></p>
@@ -43,9 +43,9 @@
             </div>
         </section>
 
-        <article>
-            <!--Future Conditions right bottom-->
-            <div class="futureConditions float-right">
+        <section>
+            <!--Future Conditions bottom-->
+            <div class="futureConditions">
                 <h2>
                     5-Day Forecast
                 </h2>
@@ -80,7 +80,7 @@
                     <p id="humidity"></p>
                 </div>
             </div>
-        </article>
+        </section>
         
 
         <!--JS-->
